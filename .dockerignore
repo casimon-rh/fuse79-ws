@@ -1,0 +1,9 @@
+.vscode
+target/
+*.class
+.classpath
+.factorypath
+.settings
+docker/
+run-docker.sh
+*.zip

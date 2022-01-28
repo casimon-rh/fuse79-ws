@@ -1,0 +1,9 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/Users/casimon/Library/Application Support/Code - Insiders/User/globalStorage/redhat.vscode-camelk/java-dependencies-3.11.0/dependencies/*.jar",
+    "/Users/casimon/Library/Application Support/Code - Insiders/User/globalStorage/redhat.vscode-camelk/java-dependencies-3.11.1/dependencies/*.jar"
+  ],
+  "extensions.ignoreRecommendations": true
+}

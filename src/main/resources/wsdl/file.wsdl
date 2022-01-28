@@ -1,0 +1,46 @@
+<wsdl:definitions name="crearRegistro" targetNamespace="http://example.com/registro" 
+  xmlns:tns="http://example.com/registro" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:types="http://example.com/registro/types">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://example.com/registro/types">
+      <xsd:complexType name="RegistroType">
+        <xsd:simpleContent>
+          <xsd:extension base="xsd:string"/>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:element name="CrearRegistroRequest" type="types:RegistroType" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="crearRegistroRequestMsg">
+    <wsdl:part name="request" element="types:CrearRegistroRequest"/>
+  </wsdl:message>
+
+  <wsdl:portType name="CrearRegistroPortType">
+    <wsdl:operation name="crearRegistro">
+      <wsdl:input message="tns:crearRegistroRequestMsg" />
+      <wsdl:output message="tns:crearRegistroRequestMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="CrearRegistroBinding" type="tns:CrearRegistroPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="crearRegistro">
+      <soap:operation soapAction="http://example.com/registro/crearRegistro"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="crearRegistro">
+    <wsdl:port name="CrearRegistroPortType" binding="tns:CrearRegistroBinding">
+      <soap:address location="/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
