@@ -1,20 +1,17 @@
 
 camel:
   springboot:
-    name: fuse-rest-rh
+    name: fuse-soap-rh
     main-run-controller: true
 
 server:
   address: 0.0.0.0
-  port: 8090 #! ver restConfiguration
+  port: 8080
 management:
   address: 0.0.0.0
-  port: 8091
+  port: 8081
 
 endpoints:
   enabled: false
   health:
     enabled: true
-
-redhat:
-  backend: ${MY_BACKEND_URL:#{null}}

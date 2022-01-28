@@ -152,6 +152,19 @@
       </exclusions>
       <!-- #endregion excl -->
     </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-saxon-starter</artifactId>
+      <version>${camel-version}</version>
+      <!-- #region excl -->
+      <exclusions>
+        <exclusion>
+          <groupId>xerces</groupId>
+          <artifactId>xercesImpl</artifactId>
+        </exclusion>
+      </exclusions>
+      <!-- #endregion excl -->
+    </dependency>
   </dependencies>
   <build>
     <defaultGoal>spring-boot:run</defaultGoal>

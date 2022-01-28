@@ -12,16 +12,20 @@
         </xsd:simpleContent>
       </xsd:complexType>
       <xsd:element name="CrearRegistroRequest" type="types:RegistroType" />
+      <xsd:element name="CrearRegistroResponse" type="types:RegistroType" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="crearRegistroRequestMsg">
     <wsdl:part name="request" element="types:CrearRegistroRequest"/>
   </wsdl:message>
+  <wsdl:message name="crearRegistroResponseMsg">
+    <wsdl:part name="response" element="types:CrearRegistroResponse"/>
+  </wsdl:message>
 
   <wsdl:portType name="CrearRegistroPortType">
     <wsdl:operation name="crearRegistro">
       <wsdl:input message="tns:crearRegistroRequestMsg" />
-      <wsdl:output message="tns:crearRegistroRequestMsg" />
+      <wsdl:output message="tns:crearRegistroResponseMsg" />
     </wsdl:operation>
   </wsdl:portType>
 

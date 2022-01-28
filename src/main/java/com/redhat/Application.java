@@ -1,6 +1,7 @@
 
 package com.redhat;
 
+import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.boot.SpringApplication;
@@ -26,7 +27,7 @@ public class Application {
         registrationBean.setName("CXFServlet");
         return registrationBean;
     }
-    @Bean
+    @Bean(name= Bus.DEFAULT_BUS_ID)
     public SpringBus cxf() {        
         return new SpringBus();
     }
